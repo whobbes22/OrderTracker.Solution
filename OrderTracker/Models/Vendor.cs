@@ -1,7 +1,11 @@
-namespace Bakery.Models
+using System.Collections.Generic;
+
+namespace OrderTracker.Models
 {
-  public class ClassName
-  {
-    // Business Logic goes here.
-  }
-}
+  // public class Vendor
+  // {
+
+  // }
+  
+ }
+
