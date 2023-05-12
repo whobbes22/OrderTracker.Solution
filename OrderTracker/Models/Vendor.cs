@@ -2,10 +2,13 @@ using System.Collections.Generic;
 
 namespace OrderTracker.Models
 {
-  // public class Vendor
-  // {
-
-  // }
+  public class Vendor
+  {
+    public Vendor()
+    {
+      
+    }
+  }
   
  }
 
