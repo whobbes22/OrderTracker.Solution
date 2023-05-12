@@ -14,6 +14,18 @@ namespace ToDoList.Tests
       Vendor joe = new Vendor();
       Assert.AreEqual(typeof(Vendor), joe.GetType());
     }
+
+    
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      string description = "a nice place";
+      Vendor ven = new Vendor(description);
+      string result = ven.Description;
+
+      //Assert
+      Assert.AreEqual(description, result);
+    }
    
   }
 }

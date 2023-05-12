@@ -4,9 +4,17 @@ namespace OrderTracker.Models
 {
   public class Vendor
   {
-    public Vendor()
+
+    /*
+    Properties to include:
+    name,description of vendor,a list of orders, anything else
+    */
+
+    // public string Name {get;set;}
+    // public string Description {get;set;}
+    public Vendor(string description)
     {
-      
+
     }
   }
   
