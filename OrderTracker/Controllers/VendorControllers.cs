@@ -18,5 +18,11 @@ namespace ToDoList.Controllers
       {
         return View();
       }
+      [HttpPost("/vendor")]
+      public ActionResult Create(string vendorName)
+      {
+        Vendor vend = new Vendor(vendorName,"a");
+        return RedirectToAction("Index");
+      }
     }
 }
