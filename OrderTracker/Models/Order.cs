@@ -16,6 +16,7 @@ namespace OrderTracker.Models
     public int Id {get; }
 
     private static List<Order> _instances = new List<Order>{};
+    
     public Order(string title,string price,string description)
     {
       Description = description;
@@ -38,7 +39,6 @@ namespace OrderTracker.Models
     {
       return _instances[searchId-1];
     }
-
 
 
     //Instance methods

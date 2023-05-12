@@ -18,7 +18,7 @@ namespace OrderTracker.Controllers
       {
       
         Vendor vend = Vendor.Find(vendorId);
-        Order ord = new Order.Find(orderId);
+        Order ord = Order.Find(orderId);
 
         
         Dictionary<string,object> model = new Dictionary<string, object> ();
