@@ -15,6 +15,15 @@ namespace OrderTracker.Tests
       Assert.AreEqual(typeof(Order), cake.GetType());
     }
 
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      string description = "a good cake";
+      Order ord = new Order(description);
+      string result = ord.Description;
+
+      Assert.AreEqual(description, result);
+    }
    
   }
 }
