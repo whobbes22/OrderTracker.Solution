@@ -11,7 +11,7 @@ namespace ToDoList.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor joe = new Vendor();
+      Vendor joe = new Vendor("hi");
       Assert.AreEqual(typeof(Vendor), joe.GetType());
     }
 
