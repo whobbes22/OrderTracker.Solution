@@ -40,7 +40,7 @@ namespace OrderTracker.Models
       return _instances[searchId-1];
     }
     
-    // Non static functions
+    // Non static functions (instance)
 
     public void AddOrder(Order order)
     {
