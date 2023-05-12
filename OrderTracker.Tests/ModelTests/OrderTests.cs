@@ -25,5 +25,14 @@ namespace OrderTracker.Tests
       Assert.AreEqual(description, result);
     }
    
+    [TestMethod]
+    public void GetTitle_ReturnsTitle_String()
+    {
+      string title = "Cake1";
+      Order ord = new Order(title,"description");
+      string result = ord.Description;
+
+      Assert.AreEqual(title, result);
+    }
   }
 }
