@@ -12,6 +12,7 @@ namespace OrderTracker.Models
 
     public string Name {get;set;}
     public string Description {get; set;}
+    
     public Vendor(string name, string script)
     {
       Description = script;
