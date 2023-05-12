@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using OrderTracker.Models;
 using System;
 
-namespace ToDoList.Tests
+namespace OrderTracker.Tests
 {
   [TestClass]
-  public class ItemTests 
+  public class VendorTests 
   {
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
@@ -23,7 +23,6 @@ namespace ToDoList.Tests
       Vendor ven = new Vendor("joe",description);
       string result = ven.Description;
 
-      //Assert
       Assert.AreEqual(description, result);
     }
     
@@ -34,7 +33,6 @@ namespace ToDoList.Tests
       Vendor ven = new Vendor(name,"somewhere nice");
       string result = ven.Name;
 
-      //Assert
       Assert.AreEqual(name, result);
     }
    
