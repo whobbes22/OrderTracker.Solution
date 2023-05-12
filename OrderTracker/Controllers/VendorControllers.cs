@@ -48,8 +48,8 @@ namespace OrderTracker.Controllers
         Vendor foundVend = Vendor.Find(vendorId);
         Order newOrd = new Order("title","price",orderDescription);
         List<Order> selectedOrder = foundVend.Orders;
-        model.Add("vendor",selectedOrder);
-        model.Add("order",foundVend);
+        model.Add("vendor",foundVend);
+        model.Add("order",selectedOrder);
         return View("Show",model);
       }
     }

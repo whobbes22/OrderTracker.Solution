@@ -17,12 +17,12 @@ namespace OrderTracker.Controllers
       [HttpGet("/vendor/{vendorId}/orders/{orderId}")]
       public ActionResult Show(int vendorId, int orderId)
       {
-        Vendor vend = Vendor.Find(vendorId);
-        Order ord = Order.Find(orderId);
+        Vendor vendor = Vendor.Find(vendorId);
+        Order order = Order.Find(orderId);
         
         Dictionary<string,object> model = new Dictionary<string, object> ();
-        model.Add("Vendor",vend);
-        model.Add("order",ord);
+        model.Add("Vendor",vendor);
+        model.Add("order",order);
         return View(model);
       }
     }
