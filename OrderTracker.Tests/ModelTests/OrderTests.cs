@@ -19,7 +19,7 @@ namespace OrderTracker.Tests
     public void GetDescription_ReturnsDescription_String()
     {
       string description = "a good cake";
-      Order ord = new Order("a",description);
+      Order ord = new Order("1","a",description);
       string result = ord.Description;
 
       Assert.AreEqual(description, result);
@@ -29,10 +29,20 @@ namespace OrderTracker.Tests
     public void GetTitle_ReturnsTitle_String()
     {
       string title = "Cake1";
-      Order ord = new Order(title,"description");
+      Order ord = new Order("1",title,"description");
       string result = ord.Title;
 
       Assert.AreEqual(title, result);
+    }
+
+    [TestMethod]
+    public void GetPrice_ReturnsPrice_String()
+    {
+      string price = "10.1";
+      Order ord = new Order(price,"title","description");
+      string result = ord.Price;
+
+      Assert.AreEqual(price, result);
     }
   }
 }
