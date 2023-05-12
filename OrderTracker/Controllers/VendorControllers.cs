@@ -10,7 +10,8 @@ namespace ToDoList.Controllers
       [HttpGet("/vendor")]
       public ActionResult Index()
       {
-        return View();
+        List<Vendor> vend = Vendor.GetAll();
+        return View(vend);
       }
 
       [HttpGet("/vendor/new")]
@@ -34,6 +35,18 @@ namespace ToDoList.Controllers
         model.Add("Vendor",selectedVend);
         model.Add("order",selectedOrder);
         return View(model);
+      }
+
+      [HttpPost("/vendor/{vendorId}/orders")]
+      public ActionResult Create(int vendorId, string script)
+      {
+        Dictionary<string,object> model = new Dictionary<string, object> ();
+        Vendor foundVend = Vendor.Find(vendorId);
+        Order newOrd = new Order("title","price",script);
+        List<Order> selectedOrder = foundVend.Orders;
+        model.Add("Vendor",selectedOrder);
+        model.Add("order",foundVend);
+        return View("Show",model);
       }
     }
 }
