@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using OrderTracker.Models;
 using System.Collections.Generic;
 
+
 namespace OrderTracker.Controllers
 {
     public class VendorController : Controller
@@ -19,6 +20,7 @@ namespace OrderTracker.Controllers
       {
         return View();
       }
+
       [HttpPost("/vendor")]
       public ActionResult Create(string vendorName)
       {
@@ -40,11 +42,11 @@ namespace OrderTracker.Controllers
       // new orders
 
       [HttpPost("/vendor/{vendorId}/orders")]
-      public ActionResult Create(int vendorId, string script)
+      public ActionResult Create(int vendorId, string orderDescription)
       {
         Dictionary<string,object> model = new Dictionary<string, object> ();
         Vendor foundVend = Vendor.Find(vendorId);
-        Order newOrd = new Order("title","price",script);
+        Order newOrd = new Order("title","price",orderDescription);
         List<Order> selectedOrder = foundVend.Orders;
         model.Add("vendor",selectedOrder);
         model.Add("order",foundVend);
