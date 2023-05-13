@@ -22,7 +22,7 @@ namespace OrderTracker.Controllers
 
         
         Dictionary<string,object> model = new Dictionary<string, object> ();
-        model.Add("Vendor",vendor);
+        model.Add("vendor",vendor);
         model.Add("order",order);
         return View(model);
       }
