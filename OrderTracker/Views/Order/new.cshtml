@@ -6,13 +6,13 @@
 
 <form action="/vendor/@Model.Id/orders" method="post">
   <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
+  <label for="orderTitle">Order Title</label>
+  <input id="orderTitle" name="orderTitle" type="text">
+  <br>
+  <label for="orderPrice">Order Price</label>
+  <input id="orderPrice" name="orderPrice" type="text">
+  <br>
   <label for="orderDescription">Order Description</label>
   <input id="orderDescription" name="orderDescription" type="text">
   <button type='submit'>Add Order</button>
 </form>
-@* 
-<h2>@Model["order"].Description</h2>
-<h3>Category: @Model["vendor"].Name</h3>
-
-<a href='/vendor/@Model["vendor"].Id/orders/new'>Add another order</a>
-<a href='/vendor'>go back to vendors</a>  *@

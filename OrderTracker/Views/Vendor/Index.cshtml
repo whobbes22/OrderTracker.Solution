@@ -10,10 +10,15 @@
   <h4>Please add a new Vendor</h4>
 } 
 
-@foreach (Vendor vend in Model)
-{
-  <h4><a href="/vendor/@vend.Id">@vend.Name</a></h4>
-}
+<ul>
+  @foreach (Vendor vend in Model)
+  {
+    <li><h4><a href="/vendor/@vend.Id">@vend.Name</a></h4></li>
+    <ul><h5>@vend.Description</h5></ul>
+    
+
+  }
+</ul>
   <p><a href='/'>Click here to go back</a></p>
   <p><a href='/Vendor/new'>or here to add a vendor</a></p>
 

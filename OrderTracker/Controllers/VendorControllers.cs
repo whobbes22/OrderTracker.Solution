@@ -22,9 +22,9 @@ namespace OrderTracker.Controllers
       }
 
       [HttpPost("/vendor")]
-      public ActionResult Create(string vendorName)
+      public ActionResult Create(string vendorName,string vendorDescription)
       {
-        Vendor vend = new Vendor(vendorName,"a");
+        Vendor vend = new Vendor(vendorName,vendorDescription);
         return RedirectToAction("Index");
       }
 
@@ -42,11 +42,11 @@ namespace OrderTracker.Controllers
       // new orders creates orders to display within 1 vendor
 
       [HttpPost("/vendor/{vendorId}/orders")]
-      public ActionResult Create(int vendorId, string orderDescription)
+      public ActionResult Create(int vendorId,string orderTitle,string orderPrice, string orderDescription)
       {
         Dictionary<string,object> model = new Dictionary<string, object> ();
         Vendor foundVend = Vendor.Find(vendorId);
-        Order newOrd = new Order("title","price",orderDescription);
+        Order newOrd = new Order(orderTitle,orderPrice,orderDescription);
         foundVend.AddOrder(newOrd);
         List<Order> selectedOrder = foundVend.Orders;
         
