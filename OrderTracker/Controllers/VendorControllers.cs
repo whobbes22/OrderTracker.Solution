@@ -39,7 +39,7 @@ namespace OrderTracker.Controllers
         return View(model);
       }
 
-      // new orders
+      // new orders creates orders to display within 1 vendor
 
       [HttpPost("/vendor/{vendorId}/orders")]
       public ActionResult Create(int vendorId, string orderDescription)
@@ -47,9 +47,11 @@ namespace OrderTracker.Controllers
         Dictionary<string,object> model = new Dictionary<string, object> ();
         Vendor foundVend = Vendor.Find(vendorId);
         Order newOrd = new Order("title","price",orderDescription);
+        foundVend.AddOrder(newOrd);
         List<Order> selectedOrder = foundVend.Orders;
-        model.Add("vendor",foundVend);
+        
         model.Add("order",selectedOrder);
+        model.Add("vendor",foundVend);
         return View("Show",model);
       }
     }
